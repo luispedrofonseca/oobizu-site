@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OoBiZu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: #000000;
+        background: linear-gradient(
+          160deg,
+          #000000 0%,
+          #3D365C 50%,
+          #7C4585 100%
+        );
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col font-sans">
+
+    <!-- Main content -->
+    <main class="flex-grow flex items-center justify-center px-4">
+      <div class="text-center space-y-8">
+        <!-- Responsive Logo -->
+        <img 
+          src="logo.png" 
+          alt="OoBiZu Logo" 
+          class="mx-auto w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] h-auto drop-shadow-xl" 
+        />
+
+        <!-- Email -->
+        <p class="text-3xl font-semibold">
+          <a href="mailto:hello@oobizu.com?subject=Hello%20OoBiZu"
+   style="color: #FFFFFF;"
+   onmouseover="this.style.color='#F8B55F'"
+   onmouseout="this.style.color='#FFFFFF'"
+   class="hover:underline transition duration-200">
+   hello@oobizu.com
+</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-white/80 py-6">
+      © OoBiZu. All rights reserved.
+    </footer>
+
+  </body>
+</html>
