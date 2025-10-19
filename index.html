@@ -3,7 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OoBiZu</title>
+    <meta name="description" content="OoBiZu creates immersive spatial games and experiences for Apple Vision Pro. Discover Solitaire XR and other innovative XR games designed for the future of computing.">
+    <meta name="keywords" content="Apple Vision Pro, spatial games, XR games, mixed reality, Solitaire XR, visionOS, immersive gaming, spatial computing">
+    <meta name="author" content="OoBiZu">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oobizu.com/">
+    <meta property="og:title" content="OoBiZu - Spatial Games for Apple Vision Pro">
+    <meta property="og:description" content="Creating immersive spatial games and experiences for Apple Vision Pro. Discover the future of gaming with Solitaire XR and more.">
+    <meta property="og:image" content="https://oobizu.com/logo.png">
+    <meta property="og:site_name" content="OoBiZu">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oobizu.com/">
+    <meta property="twitter:title" content="OoBiZu - Spatial Games for Apple Vision Pro">
+    <meta property="twitter:description" content="Creating immersive spatial games and experiences for Apple Vision Pro. Discover the future of gaming with Solitaire XR and more.">
+    <meta property="twitter:image" content="https://oobizu.com/logo.png">
+    
+    <title>OoBiZu - Spatial Games for Apple Vision Pro | Immersive XR Experiences</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OoBiZu",
+      "url": "https://oobizu.com",
+      "logo": "https://oobizu.com/logo.png",
+      "description": "Creating immersive spatial games and experiences for Apple Vision Pro",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@oobizu.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://oobizu.com"
+      ]
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -20,27 +68,70 @@
     </style>
   </head>
   <body class="min-h-screen flex flex-col font-sans">
+    <!-- Navigation -->
+    <nav class="p-4 md:p-6">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <div class="text-white font-semibold text-lg">OoBiZu</div>
+        <div class="space-x-4 md:space-x-6">
+          <a href="/solitairexr" class="text-white hover:text-yellow-300 transition duration-200 text-sm md:text-base">
+            Solitaire XR
+          </a>
+          <a href="/privacy" class="text-white hover:text-yellow-300 transition duration-200 text-sm md:text-base">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Main content -->
     <main class="flex-grow flex items-center justify-center px-4">
-      <div class="text-center space-y-8">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
         <!-- Responsive Logo -->
         <img 
           src="logo.png" 
-          alt="OoBiZu Logo" 
+          alt="OoBiZu Logo - Spatial Games for Apple Vision Pro" 
           class="mx-auto w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] h-auto drop-shadow-xl" 
         />
 
-        <!-- Email -->
-        <p class="text-3xl font-semibold">
-          <a href="mailto:hello@oobizu.com?subject=Hello%20OoBiZu"
-   style="color: #FFFFFF;"
-   onmouseover="this.style.color='#F8B55F'"
-   onmouseout="this.style.color='#FFFFFF'"
-   class="hover:underline transition duration-200">
-   hello@oobizu.com
-</a>
-        </p>
+        <!-- Hero Text -->
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-6xl font-bold text-white">
+            Games designed for the future of computing
+          </h1>
+          <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Creating immersive experiences that redefine how we play, interact, and explore in mixed reality. 
+            Discover the future of gaming with our innovative XR titles.
+          </p>
+        </div>
+
+        <!-- Featured Game -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mt-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Featured Game</h2>
+          <div class="space-y-4">
+            <h3 class="text-xl md:text-2xl font-semibold text-yellow-300">Solitaire XR</h3>
+            <p class="text-lg text-white/90 max-w-2xl mx-auto">
+              Classic card games reimagined in breathtaking 3D space.
+            </p>
+            <a href="/solitairexr" 
+               class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-semibold text-lg hover:from-yellow-300 hover:to-orange-400 transition duration-200 shadow-lg mt-4">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="pt-8">
+          <p class="text-lg text-white/80 mb-4">Want to know more about our games?</p>
+          <p class="text-2xl md:text-3xl font-semibold">
+            <a href="mailto:hello@oobizu.com?subject=Hello%20OoBiZu"
+               style="color: #FFFFFF;"
+               onmouseover="this.style.color='#F8B55F'"
+               onmouseout="this.style.color='#FFFFFF'"
+               class="hover:underline transition duration-200">
+              hello@oobizu.com
+            </a>
+          </p>
+        </div>
       </div>
     </main>
 
