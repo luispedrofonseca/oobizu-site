@@ -72,7 +72,9 @@
       transform: translateY(-50%) scale(1.1);
     }
     
-    .carousel-dot.active {
+    .carousel-dot.active,
+    .video-carousel-dot.active,
+    .screenshot-carousel-dot.active {
       background-color: #F8B55F;
       transform: scale(1.2);
     }
@@ -162,8 +164,8 @@
             
             <!-- Dots Indicator -->
             <div class="flex justify-center mt-6 space-x-2">
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(1)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(2)"></button>
+              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(1)"></button>
+              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(2)"></button>
             </div>
           </div>
         </div>
@@ -220,16 +222,16 @@
             
             <!-- Dots Indicator -->
             <div class="flex justify-center mt-6 space-x-2">
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(1)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(2)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(3)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(4)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(5)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(6)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(7)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(8)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(9)"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(10)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(1)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(2)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(3)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(4)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(5)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(6)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(7)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(8)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(9)"></button>
+              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(10)"></button>
             </div>
           </div>
         </div>
@@ -329,16 +331,14 @@
     // Screenshots carousel functions
     function updateCarousel() {
       const slides = document.getElementById('carouselSlides');
-      const dots = document.querySelectorAll('.carousel-dot');
+      const dots = document.querySelectorAll('.screenshot-carousel-dot');
       
       // Update slide position
       slides.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
       
-      // Update active dot (only for screenshots carousel)
+      // Update active dot
       dots.forEach((dot, index) => {
-        if (dot.onclick && dot.onclick.toString().includes('currentSlide')) {
-          dot.classList.toggle('active', index === currentSlideIndex);
-        }
+        dot.classList.toggle('active', index === currentSlideIndex);
       });
     }
     
@@ -363,16 +363,14 @@
     // Video carousel functions
     function updateVideoCarousel() {
       const slides = document.getElementById('videoCarouselSlides');
-      const dots = document.querySelectorAll('.carousel-dot');
+      const dots = document.querySelectorAll('.video-carousel-dot');
       
       // Update slide position
       slides.style.transform = `translateX(-${currentVideoSlideIndex * 100}%)`;
       
-      // Update active dot (only for video carousel)
+      // Update active dot
       dots.forEach((dot, index) => {
-        if (dot.onclick && dot.onclick.toString().includes('currentVideoSlide')) {
-          dot.classList.toggle('active', index === currentVideoSlideIndex);
-        }
+        dot.classList.toggle('active', index === currentVideoSlideIndex);
       });
     }
     
