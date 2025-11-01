@@ -147,6 +147,12 @@
                     Your browser does not support the video tag.
                   </video>
                 </div>
+                <div class="carousel-slide min-w-full flex justify-center">
+                  <video class="max-w-full h-auto rounded-lg shadow-lg" controls preload="metadata">
+                    <source src="videos/Preview3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
             
@@ -166,6 +172,7 @@
             <div class="flex justify-center mt-6 space-x-2">
               <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(1)"></button>
               <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(2)"></button>
+              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(3)"></button>
             </div>
           </div>
         </div>
@@ -287,11 +294,11 @@
 
       <!-- Coming Soon Badge -->
         <div class="text-center">
-          <a href="https://apps.apple.com/us/app/solitaire-xr/id6748058767" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-4 rounded-full inline-block font-bold text-xl shadow-lg hover:from-yellow-300 hover:to-orange-400 transition duration-200">
-            Available now on the App Store
+          <a href="https://apps.apple.com/us/app/solitaire-xr/id6748058767" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
+            <video id="promoVideo" class="max-w-full rounded-lg shadow-lg" autoplay loop muted playsinline>
+              <source src="video-link.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </a>
         </div>
 
@@ -326,7 +333,7 @@
     
     // Video carousel variables
     let currentVideoSlideIndex = 0;
-    const totalVideoSlides = 2;
+    const totalVideoSlides = 3;
     
     // Screenshots carousel functions
     function updateCarousel() {
@@ -405,6 +412,14 @@
       updateVideoCarousel();
       // Uncomment the line below to enable auto-play
       // startAutoPlay();
+      
+      // Auto-play the video-link video
+      const promoVideo = document.getElementById('promoVideo');
+      if (promoVideo) {
+        promoVideo.play().catch(err => {
+          console.log('Autoplay blocked:', err);
+        });
+      }
     });
     
     // Touch/swipe support for mobile
