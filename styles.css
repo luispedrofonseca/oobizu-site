@@ -102,8 +102,18 @@ h3 {
   margin: 0;
 }
 
-h1 {
+h1,
+.display-title {
   font-size: clamp(2.6rem, 6vw, 4.6rem);
+}
+
+/* Big hero line that isn't the page's h1 (the h1 carries the SEO name) */
+.display-title {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
 h2 {
