@@ -3,465 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Solitaire XR — the classic card game reimagined for Apple Vision Pro. Play in 3D space using only your hands and eyes.">
+  <meta name="description" content="Solitaire XR: the classic card game reimagined for Apple Vision Pro. Play in 3D space using only your hands and eyes.">
+  <meta name="theme-color" content="#0d0a1c">
   <meta property="og:title" content="Solitaire XR for Apple Vision Pro">
   <meta property="og:description" content="The timeless game of Solitaire, rebuilt for spatial computing.">
-  <meta property="og:image" content="https://oobizu.com/assets/solitairexr-preview.jpg">
+  <meta property="og:image" content="https://oobizu.com/solitairexr/images/screenshot1.jpeg">
   <meta property="og:url" content="https://oobizu.com/solitairexr">
   <meta name="twitter:card" content="summary_large_image">
   <title>Solitaire XR - Classic card games reimagined in breathtaking 3D space</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: #000000;
-      background: linear-gradient(
-        160deg,
-        #000000 0%,
-        #3D365C 50%,
-        #7C4585 70%,
-        #F8B55F 100%
-      );
-      color: white;
-    }
-    
-    /* Carousel Styles */
-    .carousel-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .carousel-wrapper {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    
-    .carousel-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    
-    .carousel-slide {
-      min-width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .carousel-slide img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .carousel-nav {
-      z-index: 10;
-      backdrop-filter: blur(10px);
-    }
-    
-    .carousel-nav:hover {
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .carousel-dot.active,
-    .video-carousel-dot.active,
-    .screenshot-carousel-dot.active {
-      background-color: #F8B55F;
-      transform: scale(1.2);
-    }
-    
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .carousel-nav {
-        padding: 8px;
-      }
-      
-      .carousel-nav svg {
-        width: 20px;
-        height: 20px;
-      }
-      
-      .carousel-prev {
-        left: 8px;
-      }
-      
-      .carousel-next {
-        right: 8px;
-      }
-    }
-  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="min-h-screen flex flex-col font-sans">
-  <!-- Navigation -->
-  <nav class="p-4 md:p-6">
-    <div class="max-w-4xl mx-auto flex justify-start">
-      <a href="/" class="text-white hover:text-yellow-300 transition duration-200 font-semibold text-sm md:text-lg">
-        ← Back to OoBiZu
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="/" class="brand wordmark" aria-label="OoBiZu home">
+        <img src="/logo-poster.png" alt="" width="40" height="40">
+        OoBiZu
       </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/solitairexr" aria-current="page">Solitaire XR</a>
+        <a href="/privacy" class="hide-sm">Privacy</a>
+        <a href="#support">Support</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Main content -->
-  <main class="flex-grow max-w-4xl mx-auto px-6 py-8">
-    <!-- Hero Section -->
-    <div class="text-center mb-16">
-      <div class="inline-block">
-        <img src="logo.png" alt="Solitaire XR Logo" class="max-w-64 mx-auto">
-      </div>
-    </div>
-
-
-    <!-- Content Sections -->
-    <div class="space-y-12">
-      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">Solitaire XR</h1>
-        <p class="text-xl md:text-2xl text-white/90 mb-4">Rediscover the timeless joy of Solitaire — now in your own space.</p>
-        <p class="text-base text-white/70 mb-8">Solitaire XR is free to play, with additional games, decks and themes available through a one-time in-app purchase.</p>
-        <p class="text-lg leading-relaxed">
-          Solitaire XR brings classic card games to life in stunning spatial 3D. Float cards in mid-air, stack them with intuitive hand gestures, and play in a calming environment that blends nostalgia with the magic of spatial computing.
-        </p>
-        
-        <!-- Video Carousel -->
-        <div class="mt-10">
-          <div class="carousel-container relative">
-            <div class="carousel-wrapper overflow-hidden rounded-lg">
-              <div class="carousel-slides flex transition-transform duration-500 ease-in-out" id="videoCarouselSlides">
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <video class="max-w-full h-auto rounded-lg shadow-lg" controls preload="metadata">
-                    <source src="videos/Preview1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <video class="max-w-full h-auto rounded-lg shadow-lg" controls preload="metadata">
-                    <source src="videos/Preview2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <video class="max-w-full h-auto rounded-lg shadow-lg" controls preload="metadata">
-                    <source src="videos/Preview3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Navigation Arrows -->
-            <button class="carousel-nav carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200" onclick="changeVideoSlide(-1)">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button class="carousel-nav carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200" onclick="changeVideoSlide(1)">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-            
-            <!-- Dots Indicator -->
-            <div class="flex justify-center mt-6 space-x-2">
-              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(1)"></button>
-              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(2)"></button>
-              <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentVideoSlide(3)"></button>
-            </div>
+  <main>
+    <!-- Hero -->
+    <section class="hero product-hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <img class="sxr-logo" src="logo.png" alt="Solitaire XR Logo" width="140" height="140">
+          <h1>Solitaire XR</h1>
+          <p class="lead">Rediscover the timeless joy of Solitaire, now in your own space.</p>
+          <div class="btn-row">
+            <a href="https://apps.apple.com/us/app/solitaire-xr/id6748058767" target="_blank" rel="noopener noreferrer" class="btn btn-store">
+              <svg width="22" height="26" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9C3.5 4.8 1.9 5.8 1 7.4c-1.9 3.2-.5 8 1.3 10.6.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.9-1.1-2.9-4.3zM11.5 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+            <a href="#support" class="btn btn-ghost">Get support</a>
           </div>
+          <p class="note">Solitaire XR is free to play, with additional games, decks and themes available through a one-time in-app purchase.</p>
         </div>
-
-        <!-- Screenshots Carousel (moved inside this box) -->
-        <div class="mt-10">
-          <div class="carousel-container relative">
-            <div class="carousel-wrapper overflow-hidden rounded-lg">
-              <div class="carousel-slides flex transition-transform duration-500 ease-in-out" id="carouselSlides">
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot1.jpeg" alt="Solitaire XR Screenshot 1" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot2.jpeg" alt="Solitaire XR Screenshot 2" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot3.jpeg" alt="Solitaire XR Screenshot 3" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot4.jpeg" alt="Solitaire XR Screenshot 4" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot5.jpeg" alt="Solitaire XR Screenshot 5" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot6.jpeg" alt="Solitaire XR Screenshot 6" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot7.jpeg" alt="Solitaire XR Screenshot 7" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot8.jpeg" alt="Solitaire XR Screenshot 8" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot9.jpeg" alt="Solitaire XR Screenshot 9" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="carousel-slide min-w-full flex justify-center">
-                  <img src="images/screenshot10.jpeg" alt="Solitaire XR Screenshot 10" class="max-w-full h-auto rounded-lg shadow-lg">
-                </div>
-              </div>
-            </div>
-            
-            <!-- Navigation Arrows -->
-            <button class="carousel-nav carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200" onclick="changeSlide(-1)">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button class="carousel-nav carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200" onclick="changeSlide(1)">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-            
-            <!-- Dots Indicator -->
-            <div class="flex justify-center mt-6 space-x-2">
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(1)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(2)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(3)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(4)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(5)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(6)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(7)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(8)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(9)"></button>
-              <button class="screenshot-carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-200" onclick="currentSlide(10)"></button>
-            </div>
+        <div class="hero-art">
+          <div class="shot-frame">
+            <img src="images/screenshot1.jpeg" alt="Solitaire XR table floating in a real kitchen" width="1280" height="720">
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-        <h2 class="text-3xl font-bold mb-6 text-center">Key Features</h2>
-        <ul class="text-lg leading-relaxed space-y-4">
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Immersive Spatial Gameplay</strong><br>
-              <span class="text-white/80">Play on a beautiful virtual table that expands into your real-world space. Cards move naturally with your hands — no controllers needed.</span>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Classic + New Game Modes</strong><br>
-              <span class="text-white/80">Enjoy Klondike, Spider, FreeCell and Memory, with more games and variants on the way.</span>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Intuitive Hand & Eye Controls</strong><br>
-              <span class="text-white/80">Use Vision Pro's precision hand tracking and eye control for effortless drag, drop, flip, and stack actions.</span>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Customizable Experience</strong><br>
-              <span class="text-white/80">Choose from beautiful custom decks and various themes to suit your style.</span>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Soothing Audio & Ambient Visuals</strong><br>
-              <span class="text-white/80">Relaxing music and dynamic lighting adapt to your environment for a cozy, mindful experience.</span>
-            </div>
-          </li>
-          <li class="flex items-start">
-            <span class="text-yellow-300 mr-3 mt-1">•</span>
-            <div>
-              <strong>Progress & Playability</strong><br>
-              <span class="text-white/80">Track your stats and enjoy hints and undo options when you need them.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Coming Soon Badge -->
-        <div class="text-center">
-          <a href="https://apps.apple.com/us/app/solitaire-xr/id6748058767" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
-            <video id="promoVideo" class="max-w-full rounded-lg shadow-lg" autoplay loop muted playsinline>
-              <source src="video-link.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </a>
-        </div>
-
-      <!-- Support Section -->
-      <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mt-12">
-        <h2 class="text-3xl font-bold mb-6 text-center">Need Support?</h2>
-        <p class="text-lg leading-relaxed text-center mb-6">
-          Have questions about Solitaire XR or need technical assistance? We're here to help make your spatial gaming experience as smooth as possible.
-        </p>
-        <div class="text-center">
-          <a href="mailto:hello@oobizu.com?subject=Solitaire%20XR%20Support" 
-             class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-semibold text-lg hover:from-yellow-300 hover:to-orange-400 transition duration-200 shadow-lg">
-            Contact Support
-          </a>
-          <p class="text-sm text-white/70 mt-4">
-            We typically respond within 24 hours
+    <!-- About + trailers -->
+    <section id="watch">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">See it in action</span>
+          <h2>Cards in mid-air.</h2>
+          <p class="lead">
+            Solitaire XR brings classic card games to life in stunning spatial 3D. Float cards in mid-air, stack them with intuitive hand gestures, and play in a calming environment that blends nostalgia with the magic of spatial computing.
           </p>
         </div>
+
+        <div class="card player reveal">
+          <video id="trailer" controls preload="metadata" playsinline poster="images/screenshot2.jpeg">
+            <source src="videos/Preview1.mp4" type="video/mp4">
+          </video>
+          <div class="tabs" role="tablist" aria-label="Trailers">
+            <button class="tab" role="tab" aria-selected="true" data-src="videos/Preview1.mp4" data-poster="images/screenshot2.jpeg">Preview 1</button>
+            <button class="tab" role="tab" aria-selected="false" data-src="videos/Preview2.mp4" data-poster="images/screenshot3.jpeg">Preview 2</button>
+            <button class="tab" role="tab" aria-selected="false" data-src="videos/Preview3.mp4" data-poster="images/screenshot4.jpeg">Preview 3</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" style="padding-top: 24px;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Screenshots</span>
+          <h2>Your table, your space.</h2>
+        </div>
+      </div>
+      <div class="gallery reveal">
+        <div class="gallery-track" id="gallery" tabindex="0" aria-label="Solitaire XR screenshots">
+          <img src="images/screenshot1.jpeg" alt="Solitaire XR screenshot 1" loading="lazy">
+          <img src="images/screenshot2.jpeg" alt="Solitaire XR screenshot 2" loading="lazy">
+          <img src="images/screenshot3.jpeg" alt="Solitaire XR screenshot 3" loading="lazy">
+          <img src="images/screenshot4.jpeg" alt="Solitaire XR screenshot 4" loading="lazy">
+          <img src="images/screenshot5.jpeg" alt="Solitaire XR screenshot 5" loading="lazy">
+          <img src="images/screenshot6.jpeg" alt="Solitaire XR screenshot 6" loading="lazy">
+          <img src="images/screenshot7.jpeg" alt="Solitaire XR screenshot 7" loading="lazy">
+          <img src="images/screenshot8.jpeg" alt="Solitaire XR screenshot 8" loading="lazy">
+          <img src="images/screenshot9.jpeg" alt="Solitaire XR screenshot 9" loading="lazy">
+          <img src="images/screenshot10.jpeg" alt="Solitaire XR screenshot 10" loading="lazy">
+        </div>
+        <div class="gallery-controls">
+          <button class="arrow" id="prev" aria-label="Previous screenshot">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="dots" id="dots"></div>
+          <button class="arrow" id="next" aria-label="Next screenshot">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Key Features</span>
+          <h2>Everything you love about Solitaire, in 3D.</h2>
+        </div>
+        <div class="features">
+          <div class="card feature reveal">
+            <span class="suit black" aria-hidden="true">♠</span>
+            <h3>Immersive Spatial Gameplay</h3>
+            <p>Play on a beautiful virtual table that expands into your real-world space. Cards move naturally with your hands, no controllers needed.</p>
+          </div>
+          <div class="card feature reveal">
+            <span class="suit red" aria-hidden="true">♥</span>
+            <h3>Classic + New Game Modes</h3>
+            <p>Enjoy Klondike, Spider, FreeCell and Memory, with more games and variants on the way.</p>
+          </div>
+          <div class="card feature reveal">
+            <span class="suit black" aria-hidden="true">♣</span>
+            <h3>Intuitive Hand &amp; Eye Controls</h3>
+            <p>Use Vision Pro's precision hand tracking and eye control for effortless drag, drop, flip, and stack actions.</p>
+          </div>
+          <div class="card feature reveal">
+            <span class="suit red" aria-hidden="true">♦</span>
+            <h3>Customizable Experience</h3>
+            <p>Choose from beautiful custom decks and various themes to suit your style.</p>
+          </div>
+          <div class="card feature reveal">
+            <span class="suit black" aria-hidden="true">♠</span>
+            <h3>Soothing Audio &amp; Ambient Visuals</h3>
+            <p>Relaxing music and dynamic lighting adapt to your environment for a cozy, mindful experience.</p>
+          </div>
+          <div class="card feature reveal">
+            <span class="suit red" aria-hidden="true">♥</span>
+            <h3>Progress &amp; Playability</h3>
+            <p>Track your stats and enjoy hints and undo options when you need them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support">
+      <div class="wrap">
+        <div class="card contact reveal">
+          <span class="eyebrow">Need Support?</span>
+          <h2>We're here to help.</h2>
+          <p class="lead">Have questions about Solitaire XR or need technical assistance? We're here to help make your spatial gaming experience as smooth as possible.</p>
+          <a href="mailto:hello@oobizu.com?subject=Solitaire%20XR%20Support" class="btn btn-primary">Contact Support</a>
+          <p class="note">hello@oobizu.com · We typically respond within 24 hours</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-white/80 py-6 border-t border-white/20">
-    <p>Developed by Oobizu — Thoughtful XR experiences for the spatial computing era.</p>
+  <footer>
+    <div class="wrap">
+      <span>Developed by OoBiZu. Thoughtful XR experiences for the spatial computing era.</span>
+      <nav aria-label="Footer">
+        <a href="/">OoBiZu</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="mailto:hello@oobizu.com">hello@oobizu.com</a>
+      </nav>
+    </div>
   </footer>
 
+  <script src="/site.js"></script>
   <script>
-    // Screenshots carousel variables
-    let currentSlideIndex = 0;
-    const totalSlides = 10;
-    
-    // Video carousel variables
-    let currentVideoSlideIndex = 0;
-    const totalVideoSlides = 3;
-    
-    // Screenshots carousel functions
-    function updateCarousel() {
-      const slides = document.getElementById('carouselSlides');
-      const dots = document.querySelectorAll('.screenshot-carousel-dot');
-      
-      // Update slide position
-      slides.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-      
-      // Update active dot
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlideIndex);
-      });
-    }
-    
-    function changeSlide(direction) {
-      currentSlideIndex += direction;
-      
-      // Handle wrapping
-      if (currentSlideIndex >= totalSlides) {
-        currentSlideIndex = 0;
-      } else if (currentSlideIndex < 0) {
-        currentSlideIndex = totalSlides - 1;
-      }
-      
-      updateCarousel();
-    }
-    
-    function currentSlide(slideNumber) {
-      currentSlideIndex = slideNumber - 1;
-      updateCarousel();
-    }
-    
-    // Video carousel functions
-    function updateVideoCarousel() {
-      const slides = document.getElementById('videoCarouselSlides');
-      const dots = document.querySelectorAll('.video-carousel-dot');
-      
-      // Update slide position
-      slides.style.transform = `translateX(-${currentVideoSlideIndex * 100}%)`;
-      
-      // Update active dot
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentVideoSlideIndex);
-      });
-    }
-    
-    function changeVideoSlide(direction) {
-      currentVideoSlideIndex += direction;
-      
-      // Handle wrapping
-      if (currentVideoSlideIndex >= totalVideoSlides) {
-        currentVideoSlideIndex = 0;
-      } else if (currentVideoSlideIndex < 0) {
-        currentVideoSlideIndex = totalVideoSlides - 1;
-      }
-      
-      updateVideoCarousel();
-    }
-    
-    function currentVideoSlide(slideNumber) {
-      currentVideoSlideIndex = slideNumber - 1;
-      updateVideoCarousel();
-    }
-    
-    // Auto-play functionality (optional)
-    function startAutoPlay() {
-      setInterval(() => {
-        changeSlide(1);
-      }, 5000); // Change slide every 5 seconds
-    }
-    
-    // Initialize carousels
-    document.addEventListener('DOMContentLoaded', function() {
-      updateCarousel();
-      updateVideoCarousel();
-      // Uncomment the line below to enable auto-play
-      // startAutoPlay();
-      
-      // Auto-play the video-link video
-      const promoVideo = document.getElementById('promoVideo');
-      if (promoVideo) {
-        promoVideo.play().catch(err => {
-          console.log('Autoplay blocked:', err);
+    // Trailer tabs: swap the single player's source
+    (function () {
+      var player = document.getElementById("trailer");
+      var tabs = document.querySelectorAll(".tab");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+          player.pause();
+          player.poster = tab.dataset.poster;
+          player.src = tab.dataset.src;
+          player.load();
         });
-      }
-    });
-    
-    // Touch/swipe support for mobile
-    let startX = 0;
-    let endX = 0;
-    
-    // Add touch support to both carousels
-    const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
-    
-    carouselWrappers.forEach(wrapper => {
-      wrapper.addEventListener('touchstart', function(e) {
-        startX = e.touches[0].clientX;
       });
-      
-      wrapper.addEventListener('touchend', function(e) {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe(wrapper);
+    })();
+
+    // Screenshot gallery: arrows and dots drive native scroll-snap
+    (function () {
+      var track = document.getElementById("gallery");
+      var slides = Array.prototype.slice.call(track.children);
+      var dotsEl = document.getElementById("dots");
+      var current = 0;
+
+      slides.forEach(function (_, i) {
+        var d = document.createElement("button");
+        d.className = "dot";
+        d.setAttribute("aria-label", "Screenshot " + (i + 1));
+        d.addEventListener("click", function () { go(i); });
+        dotsEl.appendChild(d);
       });
-    });
-    
-    function handleSwipe(wrapper) {
-      const swipeThreshold = 50;
-      const diff = startX - endX;
-      
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          // Swipe left - next slide
-          if (wrapper.querySelector('#videoCarouselSlides')) {
-            changeVideoSlide(1);
-          } else {
-            changeSlide(1);
-          }
-        } else {
-          // Swipe right - previous slide
-          if (wrapper.querySelector('#videoCarouselSlides')) {
-            changeVideoSlide(-1);
-          } else {
-            changeSlide(-1);
-          }
-        }
+      var dots = dotsEl.children;
+
+      function go(i) {
+        i = (i + slides.length) % slides.length;
+        var s = slides[i];
+        track.scrollTo({ left: s.offsetLeft - (track.clientWidth - s.clientWidth) / 2, behavior: "smooth" });
       }
-    }
+
+      function mark() {
+        var mid = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, bestDist = Infinity;
+        slides.forEach(function (s, i) {
+          var d = Math.abs(s.offsetLeft + s.clientWidth / 2 - mid);
+          if (d < bestDist) { bestDist = d; best = i; }
+        });
+        current = best;
+        for (var i = 0; i < dots.length; i++) dots[i].setAttribute("aria-current", i === current ? "true" : "false");
+      }
+
+      document.getElementById("prev").addEventListener("click", function () { go(current - 1); });
+      document.getElementById("next").addEventListener("click", function () { go(current + 1); });
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(mark); }, { passive: true });
+      track.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { e.preventDefault(); go(current + 1); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); go(current - 1); }
+      });
+      mark();
+    })();
   </script>
 </body>
 </html>

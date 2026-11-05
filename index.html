@@ -7,7 +7,8 @@
     <meta name="keywords" content="Apple Vision Pro, Galaxy XR, spatial games, XR games, mixed reality, Solitaire XR, visionOS, immersive gaming, spatial computing">
     <meta name="author" content="OoBiZu">
     <meta name="robots" content="index, follow">
-    
+    <meta name="theme-color" content="#0d0a1c">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oobizu.com/">
@@ -15,23 +16,23 @@
     <meta property="og:description" content="Creating immersive spatial games and experiences for the future of computing. Discover the future of gaming with Solitaire XR and more.">
     <meta property="og:image" content="https://oobizu.com/logo.png">
     <meta property="og:site_name" content="OoBiZu">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://oobizu.com/">
     <meta property="twitter:title" content="OoBiZu - Games for the Next Dimension">
     <meta property="twitter:description" content="Creating immersive spatial games and experiences for the future of computing. Discover the future of gaming with Solitaire XR and more.">
     <meta property="twitter:image" content="https://oobizu.com/logo.png">
-    
+
     <title>OoBiZu | Games for the Next Dimension</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -51,93 +52,116 @@
       ]
     }
     </script>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: #000000;
-        background: linear-gradient(
-          160deg,
-          #000000 0%,
-          #3D365C 50%,
-          #7C4585 70%,
-          #F8B55F 100%
-        );
-        color: white;
-      }
-    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
   </head>
-  <body class="min-h-screen flex flex-col font-sans">
-    <!-- Navigation -->
-    <nav class="p-4 md:p-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <div class="text-white font-semibold text-lg">OoBiZu</div>
-        <div class="space-x-4 md:space-x-6">
-          <a href="/solitairexr" class="text-white hover:text-yellow-300 transition duration-200 text-sm md:text-base">
-            Solitaire XR
-          </a>
-          <a href="/privacy" class="text-white hover:text-yellow-300 transition duration-200 text-sm md:text-base">
-            Privacy Policy
-          </a>
-        </div>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <a href="/" class="brand wordmark" aria-label="OoBiZu home">
+          <img src="/logo-poster.png" alt="" width="40" height="40">
+          OoBiZu
+        </a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="/solitairexr">Solitaire XR</a>
+          <a href="/privacy" class="hide-sm">Privacy</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-    </nav>
+    </header>
 
-    <!-- Main content -->
-    <main class="flex-grow flex items-center justify-center px-4">
-      <div class="text-center max-w-4xl mx-auto">
-        <!-- Responsive Logo -->
-        <img 
-          src="logo.png" 
-          alt="OoBiZu Logo" 
-          class="mx-auto w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] h-auto drop-shadow-xl mb-8" 
-        />
-
-        <!-- Hero Text -->
-        <div class="space-y-6 mb-8">
-          <h1 class="text-4xl md:text-6xl font-bold text-white">
-            XR Studio
-          </h1>
-          <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Creating immersive experiences that redefine how we play, interact, and explore in eXtended Reality.<br>Discover the future of gaming with our innovative XR titles.
-          </p>
-        </div>
-
-        <!-- Featured Game -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mt-12 md:mt-16">
-          <h2 class="text-2xl md:text-3xl font-bold mb-4">Featured Game</h2>
-          <div class="space-y-4">
-            <h3 class="text-xl md:text-2xl font-semibold text-yellow-300">Solitaire XR</h3>
-            <p class="text-lg text-white/90 max-w-2xl mx-auto">
-              Classic card games reimagined in breathtaking 3D space.
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-copy">
+            <span class="eyebrow">XR Studio</span>
+            <h1>Games for the <span class="honey">next dimension.</span></h1>
+            <p class="lead">
+              Creating immersive experiences that redefine how we play, interact, and explore in eXtended Reality.
+              Discover the future of gaming with our innovative XR titles.
             </p>
-            <a href="/solitairexr" 
-               class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-3 rounded-full font-semibold text-lg hover:from-yellow-300 hover:to-orange-400 transition duration-200 shadow-lg mt-4">
-              Learn More
-            </a>
+            <div class="btn-row">
+              <a href="/solitairexr" class="btn btn-primary">Play Solitaire XR</a>
+              <a href="#contact" class="btn btn-ghost">Say hello</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              data-decorative
+              poster="/logo-poster.png"
+              aria-label="OoBiZu Logo"
+              width="520"
+              height="520"
+            >
+              <!-- HEVC with alpha first for Safari/iOS, then VP9 with alpha for Chrome/Firefox/Edge -->
+              <source src="/logo-loop.mov" type='video/mp4; codecs="hvc1"' />
+              <source src="/logo-loop.webm" type="video/webm" />
+              <img src="/logo.png" alt="OoBiZu Logo" />
+            </video>
           </div>
         </div>
+      </section>
 
-        <!-- Contact -->
-        <div class="pt-8">
-          <p class="text-lg text-white/80 mb-4">Want to know more about our games?</p>
-          <p class="text-2xl md:text-3xl font-semibold">
-            <a href="mailto:hello@oobizu.com?subject=Hello%20OoBiZu"
-               style="color: #FFFFFF;"
-               onmouseover="this.style.color='#F8B55F'"
-               onmouseout="this.style.color='#FFFFFF'"
-               class="hover:underline transition duration-200">
-              hello@oobizu.com
-            </a>
-          </p>
+      <!-- Games -->
+      <section id="games">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Featured Game</span>
+            <h2>Our games</h2>
+          </div>
+
+          <article class="card game reveal">
+            <div class="game-media">
+              <img src="/solitairexr/images/screenshot1.jpeg" alt="Solitaire XR table floating in a kitchen" loading="lazy">
+            </div>
+            <div class="game-body">
+              <img class="game-logo" src="/solitairexr/logo.png" alt="" width="96" height="96">
+              <h3 class="wordmark" style="font-size: 2.2rem;">Solitaire XR</h3>
+              <p class="lead">Classic card games reimagined in breathtaking 3D space.</p>
+              <div class="chips">
+                <span class="chip">Apple Vision Pro</span>
+                <span class="chip">Free to play</span>
+                <span class="chip">Klondike, Spider, FreeCell, Memory</span>
+              </div>
+              <div class="btn-row" style="justify-content: flex-start;">
+                <a href="/solitairexr" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="wrap">
+          <div class="card contact reveal">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Want to know more about our games?</h2>
+            <a class="email" href="mailto:hello@oobizu.com?subject=Hello%20OoBiZu">hello@oobizu.com</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center text-sm text-white/80 py-6">
-      © OoBiZu. All rights reserved.
+    <footer>
+      <div class="wrap">
+        <span>© OoBiZu. All rights reserved.</span>
+        <nav aria-label="Footer">
+          <a href="/solitairexr">Solitaire XR</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="mailto:hello@oobizu.com">hello@oobizu.com</a>
+        </nav>
+      </div>
     </footer>
 
+    <script src="/site.js"></script>
   </body>
 </html>
